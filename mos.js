@@ -3,6 +3,11 @@ Array.prototype.shuffle = function()
     var i = this.length;
     while (i) {
         var j = Math.floor(Math.random() * i);
+        vArray.prototype.shuffle = function()
+{
+    var i = this.length;
+    while (i) {
+        var j = Math.floor(Math.random() * i);
         var t = this[--i];
         this[i] = this[j];
         this[j] = t;
@@ -132,6 +137,19 @@ function setAudio()
     showLabels();
 }
 
+function resetForm()
+{
+//     document.getElementById("check1").checked = false;
+//     document.getElementById("check2").checked = false;
+//     document.getElementById("check3").checked = false;
+//     document.getElementById("check4").checked = false;
+//     document.getElementById("check5").checked = false;
+    for (var i=0; i<eval.length; i++) {
+        eval[i].checked = false;
+    }
+//     return false;
+}
+
 function exportCSV()
 {
     var csvData = "";
@@ -164,9 +182,12 @@ function init()
 function next()
 {
     n++;
+    resetForm();
     setAudio();
     evalCheck();
-    document.mosform.reset();
+//     for (var i=0; i<eval.length; i++) {
+//         eval[i].checked = false;
+//     }
     setButton();
 }
 
@@ -206,7 +227,6 @@ const method = loadText(method_file);
 var pairs = makePairs();
 var file_list = makeFileList();
 console.log(file_list);
-
 
 var n = 0;
 var eval = document.getElementsByName("eval");
